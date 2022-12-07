@@ -3,26 +3,25 @@ import React from 'react'
 const LandingMain = () => {
   return (
     <>
-      <div className="landing-card">
-        <div className="landing-content">
+      <section>
+        <div className="landing-header" id="scroll-area">
           <h1 className="landing-title">Potted Plant</h1>
-          <p className="landing-description">Portfolio by Isaiah Wright</p>
+          <p className="landing-description">Development Studio</p>
         </div>
-      </div>
+      </section>
 
-      <div className="landing-card">
-        <div className="landing-content">
-          <h1 className="landing-title">Potted Plant</h1>
-          <p className="landing-description">Portfolio by Isaiah Wright</p>
+      <section>
+        <div className="landing-fullscreen" id="scroll-area">
+          <div className="landing-card">
+            <div className="landing-content">
+              <h2 className="landing-title">🪴 About Us</h2>
+              <p className="landing-description">
+                Potted Plant develops applications and researches new technologies. The studio was created to facilitate the bigger picture of our founder, providing a home for his projects and ideas. Some projects will flourish into their own, and some will stay here to die.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
-
-      <div className="landing-card">
-        <div className="landing-content">
-          <h1 className="landing-title">Potted Plant</h1>
-          <p className="landing-description">Portfolio by Isaiah Wright</p>
-        </div>
-      </div>
+      </section>
     </>
   )
 }

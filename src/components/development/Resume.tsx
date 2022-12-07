@@ -1,21 +1,13 @@
 import React, { useState } from 'react'
 import { Loading } from '../'
+import { useCopy } from '../../hooks'
 
 const Resume = () => {
   const [isLoading, setIsLoading] = useState(true)
-  const [isCopied, setIsCopied] = useState(false)
-  const [copyMessage, setCopyMessage] = useState('')
+  // const [isCopied, setIsCopied] = useState(false)
+  // const [copyMessage, setCopyMessage] = useState('')
 
-  const handleCopy = (item: any) => {
-    navigator.clipboard.writeText(item)
-    setIsCopied(true)
-    // make item a span with id='copy-message-highlight'
-    setCopyMessage(item)
-    setTimeout(() => {
-      setIsCopied(false)
-      setCopyMessage('')
-    }, 3000)
-  }
+  const { copyMessage, handleCopy } = useCopy()
 
   const resume_details = {
     name: 'Isaiah M. Wright',
@@ -160,9 +152,9 @@ const Resume = () => {
 
   return (
     <>
-      {copyMessage ? <div id='copy-message'>📋 Copied &nbsp; <p id='copy-message-highlight'>{copyMessage}</p> &nbsp; to clipboard!</div> : null}
-
       <div className="dev-card">
+        {copyMessage ? <div id='copy-message'>📋 Copied &nbsp; <p id='copy-message-highlight'>{copyMessage}</p> &nbsp; to clipboard!</div> : null}
+
         <div className="resume-header">
           <button id='details-email' onClick={() => handleCopy(resume.details.email[0])}>📋 {resume.details.email[0]}</button>
           <h1 id='details-name'>{resume.details.name}</h1>

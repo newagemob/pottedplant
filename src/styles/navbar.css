@@ -9,6 +9,8 @@
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(4, 1fr);
+  grid-gap: 1rem;
+  text-align: center;
 
   font-size: 1.33rem;
   font-family: 'Roboto', sans-serif;
@@ -34,4 +36,28 @@
 
 .active {
   color: var(--accent-main);
+}
+
+
+/* media query for mobile navbar -- should be a 2x2 grid */
+@media screen and (max-width: 768px) {
+  .global-navbar {
+    margin-bottom: 10rem;
+  }
+
+  .navbar {
+    grid-template-columns: repeat(2, 1fr);
+
+    /* make navbar appear when scrolling down and disappear when scrolling up */
+    transition: 0.5s;
+    transform: translateY(0);
+  }
+
+  #navbar-tab {
+    border: none;
+    border-radius: 0.1rem;
+    padding: 0.5rem 0;
+    background-color: var(--light-bg-main);
+    margin: 0 0.5rem;
+  }
 }

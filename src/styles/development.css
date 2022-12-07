@@ -1,3 +1,9 @@
+.dev-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 /* Dev Navbar */
 .dev-navbar {
   display: flex;
@@ -30,32 +36,14 @@
     /* 2 x 2 grid evenly spaced */
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    grid-gap: 1rem;
+    grid-gap: 2rem;
     text-align: left;
     margin: 1rem 1rem;
     padding: 1rem 0;
-    border-bottom: 0.1rem solid #d1d1d1;
-    border-top: 0.1rem solid #d1d1d1;
   }
 
   .dev-card {
-    margin: 1rem 1rem;
-  }
-
-  #projects {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: left;
-  }
-
-  #project {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    text-align: left;
-    margin: 1rem 0;
+    margin: 1rem 2rem;
   }
 }
 
@@ -86,7 +74,7 @@
 
 .resume-body-section {
   display: flex;
-  flex-direction: column; 
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   text-align: left;
@@ -113,41 +101,47 @@ li {
   font-size: 1.2rem;
   color: var(--accent-secondary);
 }
+
 #details-email {
   font-weight: 400;
   font-size: 1rem;
   color: var(--accent-main);
 }
+
 #details-email:hover {
   color: var(--accent-secondary);
 }
+
 #details-phone {
   font-weight: 400;
   font-size: 1rem;
 }
+
 #details-location {
   font-weight: 400;
   font-size: 1rem;
 }
+
 #copy-message {
   /* popup modal in bottom center of screen */
-  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  z-index: 100;
   position: fixed;
   bottom: 0;
   left: 50%;
   transform: translate(-50%, 0);
-  width: auto;
-  height: 3rem;
+  height: auto;
   background: var(--accent-main);
-  display: flex;
-  justify-content: center;
-  align-items: center;
   transition: all 0.3s ease-in-out;
   border: none;
   border-radius: 0.3rem;
   margin: 1rem;
   padding: 0.5rem 1.33rem;
 }
+
 #copy-message-highlight {
   font-weight: 600;
   font-size: 1.2rem;
@@ -163,25 +157,30 @@ li {
   padding: 1rem 0;
   border-bottom: 0.1rem solid #d1d1d1;
 }
+
 #experience-title {
   font-weight: 600;
   font-size: 1.5rem;
   color: var(--accent-secondary);
 }
+
 #experience-organization {
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--accent-main);
 }
+
 #experience-location {
   font-weight: 400;
   font-size: 1rem;
 }
+
 #experience-dates {
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
 }
+
 #experience-description {
   font-weight: 400;
   font-size: 1rem;
@@ -202,20 +201,24 @@ li {
   font-size: 1.5rem;
   color: var(--accent-secondary);
 }
+
 #education-organization {
   font-weight: 500;
   font-size: 1.2rem;
   color: var(--accent-main);
 }
+
 #education-location {
   font-weight: 400;
   font-size: 1rem;
 }
+
 #education-dates {
   font-weight: 400;
   font-size: 1rem;
   font-style: italic;
 }
+
 #education-description {
   font-weight: 400;
   font-size: 1rem;
@@ -236,7 +239,7 @@ li {
   }
 
   .resume-body {
-    margin: 1rem 1rem;
+    margin: 1rem 0;
   }
 
   .resume-body-section {
@@ -281,12 +284,93 @@ li {
   text-decoration: none;
   color: var(--accent-main);
 }
+
 .project-name:hover {
   color: var(--accent-secondary);
   transition: all 0.3s ease-in-out;
 }
+
 .project-description {
   font-weight: 400;
   font-size: 1rem;
   color: var(--accent-secondary);
+}
+
+
+/* media query for projects */
+
+@media (max-width: 768px) {
+  #project {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 0;
+    padding: 2rem 1rem;
+    border-bottom: 0.1rem solid #d1d1d1;
+    border-top: 0.1rem solid #d1d1d1;
+  }
+}
+
+
+/* GITHUB */
+
+.github-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: flex-start;
+  font-weight: 600;
+  font-size: 1.5rem;
+  margin: 1rem;
+}
+
+.github-title a {
+  text-decoration: none;
+  color: var(--accent-secondary);
+  background-color: #d1d1d1;
+  border: none;
+  border-radius: 0.166rem;
+  padding: 0.3rem 0.6rem;
+  margin: 0 0.3rem;
+}
+
+.github-calendar {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin: 1rem 6rem;
+}
+
+
+/* media query for github */
+
+@media (max-width: 768px) {
+  .github-title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-weight: 600;
+    font-size: 1.5rem;
+    margin: 1rem;
+  }
+
+  .github-title a {
+    text-decoration: none;
+    color: var(--accent-secondary);
+    background-color: #d1d1d1;
+    border: none;
+    border-radius: 0.166rem;
+    padding: 0.3rem 0.6rem;
+    margin: 0.3rem 0;
+  }
+
+  .github-calendar {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 1rem 2.66rem;
+  }
 }

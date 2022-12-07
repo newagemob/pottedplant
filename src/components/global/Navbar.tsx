@@ -1,16 +1,17 @@
 import Link from 'next/link'
-import React, { useCallback, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 
 const Navbar = () => {
   const navTabs = ['Home', 'Development', 'Research', 'Games']
   const navUrls = ['/', '/development', '/research', '/games']
-  // active tab
   const [activeTab, setActiveTab] = useState(navTabs[0])
 
-  // handle page navigation
+  // TODO: make navbar disappear when the user scrolls down and reappear when the user scrolls up
+
   const handlePageNavigation = (tab: string) => {
     console.log(tab)
     setActiveTab(tab)
+    // TODO: get activeTab from global state
   }
 
   return (

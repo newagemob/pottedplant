@@ -1,10 +1,49 @@
-/* neumorphism card with rounded corners */
+/* TODO: implement snap scroll */
+html {
+  overflow: auto;
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+section {
+  scroll-snap-align: start;
+}
+
+#scroll-area {
+  height: 100vh;
+}
+
+.landing-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+}
+
+.landing-fullscreen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 5rem;
+  scroll-snap-align: start;
+}
+
 .landing-card {
   background: #f5f5f5;
   border-radius: 1rem;
   box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, 0.2);
-  padding: 1rem;
-  margin: 1rem;
+  padding: 2rem 2rem;
+  margin: 1rem 3rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landing-content {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -15,10 +54,19 @@
   font-size: 2rem;
   font-weight: 600;
   color: var(--accent-main);
+  margin-bottom: 1rem;
 }
 
 .landing-description {
   font-size: 1.33rem;
   font-weight: 300;
   color: var(--accent-secondary);
+}
+
+
+/* media query for mobile landing page */
+@media screen and (max-width: 768px) {
+  #scroll-area {
+    height: 90vh;
+  }
 }

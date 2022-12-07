@@ -36,21 +36,23 @@ const Development: NextPage = () => {
         <h1 className='page-title'>
           Development
         </h1>
+
+        <div className='dev-navbar'>
+          {tabs.map((tab) => (
+            <button
+              key={tab}
+              className='dev-tab'
+              onClick={() => handleTabChange(tab)}
+            >
+              {tab}
+            </button>
+          ))}
+        </div>
       </div>
 
-      <div className='dev-navbar'>
-        {tabs.map((tab) => (
-          <button
-            key={tab}
-            className='text-2xl font-bold'
-            onClick={() => handleTabChange(tab)}
-          >
-            {tab}
-          </button>
-        ))}
+      <div className='dev-container'>
+        {renderTab()}
       </div>
-
-      {renderTab()}
     </>
   )
 }
