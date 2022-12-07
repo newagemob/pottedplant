@@ -34,7 +34,7 @@ const Development: NextPage = () => {
     <>
       <div className='page-title-container'>
         <h1 className='page-title'>
-          Development
+          Development Portfolio
         </h1>
 
         <div className='dev-navbar'>

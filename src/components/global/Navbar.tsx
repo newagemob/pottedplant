@@ -1,21 +1,48 @@
 import Link from 'next/link'
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 const Navbar = () => {
-  const navTabs = ['Home', 'Development', 'Research', 'Games']
-  const navUrls = ['/', '/development', '/research', '/games']
-  const [activeTab, setActiveTab] = useState(navTabs[0])
+  const navTabs = ['🪴 home', '🧑‍💻 portfolio', '🔬 research', '👾 media']
+  const navUrls = ['/', '/development', '/research', '/media']
+  // TODO: get activeTab from global state
+  const [activeTab, setActiveTab] = useState('')
+  const [show, setShow] = useState(true)
+  const [lastScrollY, setLastScrollY] = useState(0);
 
-  // TODO: make navbar disappear when the user scrolls down and reappear when the user scrolls up
+
+  // TODO: set navbar to hidden when scrolling down, show when scrolling up
+  const controlNavbar = () => {
+    if (typeof window !== 'undefined') { 
+      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+        setShow(false)
+      } else { // if scroll up show the navbar
+        setShow(true)
+      }
+
+      // remember current page location to use in the next move
+      setLastScrollY(window.scrollY)
+    }
+  }
+
+  useEffect(() => {
+    if (typeof window !== 'undefined') {
+      window.addEventListener('scroll', controlNavbar)
+
+      // cleanup function
+      return () => {
+        window.removeEventListener('scroll', controlNavbar)
+      }
+    }
+  }, [lastScrollY])
+
 
   const handlePageNavigation = (tab: string) => {
     console.log(tab)
     setActiveTab(tab)
-    // TODO: get activeTab from global state
   }
 
   return (
-    <div className='global-navbar'>
+    <header className={show ? 'global-navbar' : 'global-navbar-hidden'}>
       <div className='navbar'>
         {navTabs.map((tab) => (
           <button key={tab} id='navbar-tab' onClick={() => handlePageNavigation(tab)} className={activeTab === tab ? 'active' : 'inactive'}>
@@ -26,7 +53,7 @@ const Navbar = () => {
           </button>
         ))}
       </div>
-    </div>
+    </header>
   )
 }
 

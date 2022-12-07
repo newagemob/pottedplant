@@ -1,5 +1,19 @@
+header {
+  position: fixed;
+  top: 0;
+  z-index: 100;
+}
+
 .global-navbar {
   margin-bottom: 6rem;
+  padding: 10rem 1rem;
+}
+
+.global-navbar-hidden {
+  /* hide */
+  /* visibility: hidden; */
+  opacity: 0;
+  transition: 0.5s;
 }
 
 .navbar {
@@ -15,8 +29,10 @@
   font-size: 1.33rem;
   font-family: 'Roboto', sans-serif;
   font-weight: 300;
-  margin: 1rem 0;
   padding: 0 1rem;
+
+  /* background-color with 0.66 opacity */
+  background-color: rgba(255, 255, 255, 0.815);
 }
 
 #navbar-tab {
@@ -25,8 +41,9 @@
   align-items: center;
   text-decoration: none;
   color: var(--accent-secondary);
-  padding: 1rem 0;
+  padding: 0.66rem 0;
   border-bottom: 0.1rem solid transparent;
+  width: auto;
 }
 #navbar-tab:hover {
   color: var(--accent-main);
@@ -47,6 +64,8 @@
 
   .navbar {
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-gap: 0.1rem;
 
     /* make navbar appear when scrolling down and disappear when scrolling up */
     transition: 0.5s;
@@ -55,9 +74,9 @@
 
   #navbar-tab {
     border: none;
-    border-radius: 0.1rem;
-    padding: 0.5rem 0;
-    background-color: var(--light-bg-main);
-    margin: 0 0.5rem;
+    border-radius: 0.166rem;
+    padding: 0.3rem 0;
+    background-color: var(--light-bg-secondary);
+    margin: 0.5rem;
   }
 }

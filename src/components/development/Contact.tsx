@@ -24,22 +24,24 @@ const Contact = () => {
 
   return (
     <>
-      <div className='contact-container'>
+      <div className='contact-card'>
         {contactInfo.map((info) => (
           <div key={info.platform} className='contact-info'>
-            <h1 className='contact-platform'>
-              {info.platform}
-            </h1>
+            <div className='contact-header'>
+              <span className='contact-icon'>
+                {info.icon}
+              </span>
+              &nbsp;
+              <h1 className='contact-platform'>
+                {info.platform}
+              </h1>
+            </div>
             {info.address && (
               <>
                 <div className='contact-link'>
                   <button className='contact-address'>
                     {info.address[0]}
                   </button>
-                </div>
-
-                <div className='contact-icon'>
-                  {info.icon}
                 </div>
               </>
             )}
@@ -51,9 +53,6 @@ const Contact = () => {
                   </button>
                 </div>
 
-                <div className='contact-icon'>
-                  {info.icon}
-                </div>
               </>
             )}
           </div>
