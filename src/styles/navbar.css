@@ -1,0 +1,37 @@
+.global-navbar {
+  margin-bottom: 6rem;
+}
+
+.navbar {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+
+  font-size: 1.33rem;
+  font-family: 'Roboto', sans-serif;
+  font-weight: 300;
+  margin: 1rem 0;
+  padding: 0 1rem;
+}
+
+#navbar-tab {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: var(--accent-secondary);
+  padding: 1rem 0;
+  border-bottom: 0.1rem solid transparent;
+}
+#navbar-tab:hover {
+  color: var(--accent-main);
+  transition: 0.2s ease-in-out;
+  font-size: 1.66rem;
+}
+
+.active {
+  color: var(--accent-main);
+}
