@@ -25,14 +25,21 @@ const Development: NextPage = () => {
   }
 
   // if tab is selected, add underline to text
-  // if tab is selected, render tab component
   const handleTabChange = (tab: string) => {
+    // once tab is selected, scroll to the next section
+    if (typeof window !== 'undefined') {
+      window.scrollTo({
+        top: window.innerHeight,
+        behavior: 'smooth',
+      })
+    }
+
     setTab(tab.toLowerCase())
   }
 
   return (
     <>
-      <div className='page-title-container'>
+      <section className='page-title-container'>
         <h1 className='page-title'>
           Development Portfolio
         </h1>
@@ -48,11 +55,11 @@ const Development: NextPage = () => {
             </button>
           ))}
         </div>
-      </div>
+      </section>
 
-      <div className='dev-container'>
+      <section className='dev-container'>
         {renderTab()}
-      </div>
+      </section>
     </>
   )
 }

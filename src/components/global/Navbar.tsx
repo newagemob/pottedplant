@@ -13,8 +13,15 @@ const Navbar = () => {
   // TODO: set navbar to hidden when scrolling down, show when scrolling up
   const controlNavbar = () => {
     if (typeof window !== 'undefined') { 
-      if (window.scrollY > lastScrollY) { // if scroll down hide the navbar
+      if (window.scrollY > lastScrollY && window.scrollY > 0) { // if scroll down, hide the navbar
         setShow(false)
+
+      }
+      else if (window.innerHeight + window.scrollY >= document.body.offsetHeight) { // if bottom of page, hide the navbar
+        setShow(false)
+      } // if top of page, show the navbar
+      else if (window.scrollY - lastScrollY > 0 && window.scrollY < 0) {
+        setShow(true)
       } else { // if scroll up show the navbar
         setShow(true)
       }

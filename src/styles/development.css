@@ -1,7 +1,25 @@
+/* PAGE HERO */
+
+.page-title-container {
+  /* each page title should be 100vh */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  margin: 1rem 3rem;
+  padding: 1rem 0;
+
+  height: 100vh;
+}
+
+
 .dev-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
+
+  height: 100vh;
+  overflow-y: auto;
 }
 
 /* Dev Navbar */
@@ -49,6 +67,13 @@
 
 
 /* RESUME */
+
+#resume {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+  margin-top: 100%;
+}
 
 .resume-header {
   display: flex;
@@ -283,16 +308,23 @@ li {
   font-size: 1.5rem;
   text-decoration: none;
   color: var(--accent-main);
+  border: none;
+  border-radius: 0.1rem;
+  background-color: var(--accent-secondary);
+  margin: 0.5rem 0;
+  padding: 0.5rem 1rem;
+  width: 33%;
 }
 
 .project-name:hover {
-  color: var(--accent-secondary);
+  color: #FFF;
   transition: all 0.3s ease-in-out;
+  width: 35%;
 }
 
 .project-description {
   font-weight: 400;
-  font-size: 1rem;
+  font-size: 1.3rem;
   color: var(--accent-secondary);
 }
 
@@ -310,6 +342,14 @@ li {
     padding: 2rem 1rem;
     border-bottom: 0.1rem solid #d1d1d1;
     border-top: 0.1rem solid #d1d1d1;
+  }
+
+  .project-name {
+    width: 100%;
+    margin: 1.5rem 0;
+  }
+  .project-name:hover {
+    width: 100%;
   }
 }
 
@@ -334,6 +374,12 @@ li {
   border-radius: 0.166rem;
   padding: 0.3rem 0.6rem;
   margin: 0 0.3rem;
+}
+.github-title a:hover {
+  color: #FFF;
+  background-color: var(--accent-secondary);
+  transition: all 0.3s ease-in-out;
+  padding: 0.3rem 1.2rem;
 }
 
 .github-calendar {
@@ -384,7 +430,7 @@ li {
   justify-content: center;
   align-items: center;
   text-align: center;
-  margin: 1rem;
+  margin: 1rem 6rem;
   padding: 2rem 1rem;
   border: 0.1rem solid #d1d1d1;
   border-radius: 0.3rem;
@@ -407,4 +453,40 @@ li {
   align-items: center;
   text-align: left;
   margin: 1rem 3rem;
+}
+
+
+/* media query for contact */
+
+@media (max-width: 768px) {
+  .contact-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem 1rem;
+    padding: 2rem 1rem;
+    border: 0.1rem solid #d1d1d1;
+    border-radius: 0.3rem;
+  }
+
+  .contact-header {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin: 1rem;
+    color: var(--accent-main);
+  }
+
+  .contact-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    text-align: left;
+    margin: 1rem 1rem;
+  }
 }

@@ -6,12 +6,11 @@ header {
 
 .global-navbar {
   margin-bottom: 6rem;
-  padding: 10rem 1rem;
 }
 
 .global-navbar-hidden {
   /* hide */
-  /* visibility: hidden; */
+  visibility: hidden;
   opacity: 0;
   transition: 0.5s;
 }
@@ -19,12 +18,12 @@ header {
 .navbar {
   position: fixed;
   top: 0;
-  width: 100%;
-  z-index: 100;
   display: grid;
+  justify-content: center;
+  align-items: center;
   grid-template-columns: repeat(4, 1fr);
   grid-gap: 1rem;
-  text-align: center;
+  width: 100%;
 
   font-size: 1.33rem;
   font-family: 'Roboto', sans-serif;

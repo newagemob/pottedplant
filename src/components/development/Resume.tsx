@@ -152,26 +152,17 @@ const Resume = () => {
 
   return (
     <>
-      <div className="dev-card">
+      <div className="dev-card" id="resume">
         {copyMessage ? <div id='copy-message'>📋 Copied &nbsp; <p id='copy-message-highlight'>{copyMessage}</p> &nbsp; to clipboard!</div> : null}
 
-        <div className="resume-header">
-          <button id='details-email' onClick={() => handleCopy(resume.details.email[0])}>📋 {resume.details.email[0]}</button>
-          <h1 id='details-name'>{resume.details.name}</h1>
-          <h2 id='details-location'>{resume.details.location}</h2>
-        </div>
-
         <div className="resume-body">
-          {/* <div className="resume-body-section">
-            <h3 id='section-title'>Skills</h3>
-            <ul>
-              {resume.skills.map((skill, index) => (
-                <li key={index} id='skill'>{skill}</li>
-              ))}
-            </ul>
-          </div> */}
+          <section className="resume-header">
+            <button id='details-email' onClick={() => handleCopy(resume.details.email[0])}>📋 {resume.details.email[0]}</button>
+            <h1 id='details-name'>{resume.details.name}</h1>
+            <h2 id='details-location'>{resume.details.location}</h2>
+          </section>
 
-          <div className="resume-body-section">
+          <section className="resume-body-section">
             <h3 id='section-title'>Experience</h3>
             <ul id='experience'>
               {resume.experience.map((experience, index) => (
@@ -188,9 +179,9 @@ const Resume = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
 
-          <div className="resume-body-section">
+          <section className="resume-body-section">
             <h3 id='section-title'>Education</h3>
             <ul id='education'>
               {resume.education.map((education, index) => (
@@ -203,7 +194,7 @@ const Resume = () => {
                 </li>
               ))}
             </ul>
-          </div>
+          </section>
         </div>
       </div>
     </>

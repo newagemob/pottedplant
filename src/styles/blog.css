@@ -1,0 +1,35 @@
+#blog-post {
+  background: #fff;
+  border: none;
+  padding: 1.66rem 1.33rem;
+  margin: 3rem 1.33rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#blog-post img {
+  width: 100%;
+  height: auto;
+  margin: 1.33rem 0;
+}
+
+#blog-post h1 {
+  font-size: 2.66rem;
+  line-height: 3.33rem;
+  margin: 0;
+}
+
+#blog-post h2 {
+  font-size: 2rem;
+  line-height: 2.66rem;
+  margin: 1.33rem 0;
+}
+
+#blog-post p {
+  font-size: 1.33rem;
+  line-height: 1.66rem;
+  margin: 1.33rem 0;
+}

@@ -24,7 +24,7 @@ const Contact = () => {
 
   return (
     <>
-      <div className='contact-card'>
+      <section className='contact-card'>
         {contactInfo.map((info) => (
           <div key={info.platform} className='contact-info'>
             <div className='contact-header'>
@@ -57,7 +57,7 @@ const Contact = () => {
             )}
           </div>
         ))}
-      </div>
+      </section>
     </>
   )
 }
