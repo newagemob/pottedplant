@@ -1,3 +1,23 @@
+/* MAIN BLOG LANDING */
+
+#blog-landing {
+  background: #fff;
+  border: none;
+  padding: 1.66rem 1.33rem;
+  margin: 3rem 1.33rem;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+
+
+
+/* INDIVIDUAL BLOG POSTS */
+
 #blog-post {
   background: #fff;
   border: none;

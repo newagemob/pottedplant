@@ -11,9 +11,9 @@ const Blog = (props: {
 }) => {
   return (
     // center this div with tailwind
-    <div className='flex justify-center items-center h-screen'>
+    <div className='flex flex-col justify-center items-center h-screen' id='blog-landing'>
       {props.posts.map(({ slug, frontMatter: { title, description } }) => (
-        <Link key={slug} href={`/research/blog/posts/${slug}`} passHref>
+        <Link key={slug} href={`/research/blog/posts/${slug}`} passHref id='blog-link'>
           <h5>{title}</h5>
           <p>{description}</p>
           <hr />
