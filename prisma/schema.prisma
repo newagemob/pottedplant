@@ -55,6 +55,8 @@ model User {
   image         String?
   accounts      Account[]
   sessions      Session[]
+  ownedItems    OwnedItem[]
+  subscriptions Subscription[]
 }
 
 model VerificationToken {
@@ -63,4 +65,25 @@ model VerificationToken {
   expires    DateTime
 
   @@unique([identifier, token])
+}
+
+
+// Custom types
+
+model OwnedItem {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   String
+}
+
+model Subscription {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   String
 }
