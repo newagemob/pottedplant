@@ -6,7 +6,7 @@ import matter, { } from 'gray-matter'
 import ReactMarkdown from 'react-markdown'
 import ReactDom from 'react-dom'
 
-const BlogPost = (props: {
+const MycologyPost = (props: {
     frontMatter: { [key: string]: string },
     slug: string,
     content: string,
@@ -18,7 +18,7 @@ const BlogPost = (props: {
 
             {/* back to /research/blog button */}
             <button id='blog-back-button'>
-                <a href='/research/blog'>back</a>
+                <a href='/research/mycology'>back</a>
             </button>
 
             <h1 className='text-4xl font-bold'>{props.frontMatter.title}</h1>
@@ -30,10 +30,10 @@ const BlogPost = (props: {
     </div>
 )
 
-export default BlogPost
+export default MycologyPost
 
 export async function getStaticPaths() {
-    const dirPath = path.join(process.cwd(), 'src/pages/research/blog/posts')
+    const dirPath = path.join(process.cwd(), 'src/pages/research/mycology/posts')
     const files = fs.readdirSync(dirPath)
 
     const paths = files.filter(filename => filename.includes('.md')).map((filename) => ({
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }: never) {
     const markdownWithMeta = fs.readFileSync(
-        path.join(process.cwd(), 'src/pages/research/blog/posts', slug + '.md'),
+        path.join(process.cwd(), 'src/pages/research/mycology/posts', slug + '.md'),
         'utf-8'
     )
 

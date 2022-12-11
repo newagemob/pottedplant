@@ -3,7 +3,7 @@ import matter from 'gray-matter'
 import fs from "fs"
 import path from "path"
 
-const Blog = (props: {
+const MycologyBlog = (props: {
   posts: [{
     slug: string,
     frontMatter: { [key: string]: string }
@@ -13,7 +13,7 @@ const Blog = (props: {
     // center this div with tailwind
     <div id='blog-landing'>
       {props.posts.map(({ slug, frontMatter: { title, bannerImage } }) => (
-        <Link key={slug} href={`/research/blog/posts/${slug}`} passHref id='blog-link'>
+        <Link key={slug} href={`/research/mycology/posts/${slug}`} passHref id='blog-link'>
           <img src={bannerImage} alt={title} id='blog-thumbnail-image' />
           <h5 id='blog-thumbnail-title'>{title}</h5>
           <hr />
@@ -26,7 +26,7 @@ const Blog = (props: {
 
 export async function getStaticProps() {
   // Get files from the posts dir
-  const dirPath = path.join(process.cwd(), 'src/pages/research/blog/posts')
+  const dirPath = path.join(process.cwd(), 'src/pages/research/mycology/posts')
   const files = fs.readdirSync(dirPath)
 
   const posts = files.filter(filename => filename.includes(".md")).map((filename) => {
@@ -55,4 +55,4 @@ export async function getStaticProps() {
   }
 }
 
-export default Blog
+export default MycologyBlog

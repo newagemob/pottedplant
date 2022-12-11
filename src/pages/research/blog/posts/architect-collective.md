@@ -16,7 +16,7 @@ tags:
 
 ## Introduction
 
-When I was a kid I thought Frank Lloyd Wright was a just a funny Simon and Garfunkel song. When I got older I saw a lot of *entertainers* taking up architecture and had a sort of psychedelic revelation, seeing the world in a new way. I was fascinated by the idea of designing a building, and I wanted to be an architect. I was also fascinated by the idea of designing a computer, and I wanted to be a computer scientist. I was fascinated by the idea of designing a car, and I wanted to be an automotive engineer. I was fascinated by the idea of designing a plane, and I wanted to be a pilot. I was fascinated by the idea of designing a boat, and I wanted to be a sailor. I was fascinated by the idea of designing a house, and I wanted to be an electrician. I was fascinated by the idea of designing a city, and I wanted to be a city planner. I was fascinated by the idea of designing a country, and I wanted to be a politician. I was fascinated by the idea of designing a planet, and I wanted to be a god.
+When I was a kid I thought Frank Lloyd Wright was a just a funny Simon and Garfunkel song. When I got older I saw a lot of *entertainers* taking up architecture and had a sort of psychedelic revelation, seeing the world in a new way. I was fascinated by the idea of designing a building, and I wanted to be an architect. What I didn't realize is that architecture is rarely something that someone falls into. It's a career that requires a lot of schooling, and a lot of money. I didn't have either of those things, and I didn't have the patience to wait for them. So I went into computer science instead, and I've been designing software ever since.
 
 ## The Architect
 

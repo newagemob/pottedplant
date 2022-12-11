@@ -8,14 +8,26 @@ import React from 'react'
 const Research: NextPage = () => {
   return (
     <>
-      {/* a button linking to the blog posts in the center of the page */}
-      <div id='research-blog-button' className='flex justify-center items-center h-screen'>
+      <section id='research-blog-button' className='flex justify-center items-center h-screen'>
         <a href='/research/blog'>
           <button>
             📝 blog
           </button>
         </a>
-      </div>
+      
+        <a href='/research/agriculture'>
+          <button>
+            🍅 agriculture
+          </button>
+        </a>
+      
+        <a href='/research/mycology'>
+          <button>
+            🍄 mycology
+          </button>
+        </a>
+      </section>
+
     </>
   )
 }

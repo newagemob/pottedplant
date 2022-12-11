@@ -18,7 +18,7 @@ const BlogPost = (props: {
 
             {/* back to /research/blog button */}
             <button id='blog-back-button'>
-                <a href='/research/blog'>back</a>
+                <a href='/research/mycology'>back</a>
             </button>
 
             <h1 className='text-4xl font-bold'>{props.frontMatter.title}</h1>
@@ -33,7 +33,7 @@ const BlogPost = (props: {
 export default BlogPost
 
 export async function getStaticPaths() {
-    const dirPath = path.join(process.cwd(), 'src/pages/research/blog/posts')
+    const dirPath = path.join(process.cwd(), 'src/pages/research/agriculture/posts')
     const files = fs.readdirSync(dirPath)
 
     const paths = files.filter(filename => filename.includes('.md')).map((filename) => ({
@@ -50,7 +50,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params: { slug } }: never) {
     const markdownWithMeta = fs.readFileSync(
-        path.join(process.cwd(), 'src/pages/research/blog/posts', slug + '.md'),
+        path.join(process.cwd(), 'src/pages/research/agriculture/posts', slug + '.md'),
         'utf-8'
     )
 
