@@ -8,26 +8,49 @@ import React from 'react'
 const Research: NextPage = () => {
   return (
     <>
-      <section id='research-blog-button' className='flex justify-center items-center h-screen'>
-        <a href='/research/blog'>
-          <button>
-            📝 blog
-          </button>
-        </a>
-      
-        <a href='/research/agriculture'>
-          <button>
-            🍅 agriculture
-          </button>
-        </a>
-      
-        <a href='/research/mycology'>
-          <button>
-            🍄 mycology
-          </button>
-        </a>
-      </section>
+      <div>
+        <div id='research-blog-button' className='flex justify-center items-center'>
+          <a href='/research/courses'>
+            <button>
+              📚 courses
+            </button>
+          </a>
 
+          <p className='text-2xl'>
+            An all-in-one landing page for crash courses, tutorials, guides, quick references, and other educational resources for programming languages, libraries, frameworks, operating systems, tools, and more.
+          </p>
+
+          <a href='/research/blog'>
+            <button>
+              📝 blog
+            </button>
+          </a>
+
+          <p className='text-2xl'>
+            A personal blog where I ramble about my research for my companies, practice putting my thoughts into words, and leave a digital trail for my kids to follow one day.
+          </p>
+
+          {/* <a href='/research/agriculture'>
+            <button>
+              🍅 agriculture
+            </button>
+          </a>
+
+          <p className='text-2xl'>
+            A collection of articles and links about agriculture, farming, and gardening.
+          </p>
+
+          <a href='/research/mycology'>
+            <button>
+              🍄 mycology
+            </button>
+          </a>
+
+          <p className='text-2xl'>
+            A collection of articles and links about growing, cultivating, and consuming mushrooms.
+          </p> */}
+        </div>
+      </div>
     </>
   )
 }

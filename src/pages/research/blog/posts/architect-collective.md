@@ -12,14 +12,12 @@ tags:
     - architecture
 ---
 
-# Architecture
+As I sit here, gazing out at the world through the hazy lens of my own mind, I can't help but feel like we are all just tiny specks in an infinite, swirling sea of consciousness. It's a strange and dizzying thought, but one that I can't shake no matter how hard I try.
 
-## Introduction
+In a way, I suppose we are all just little pots of being, each one filled with our own unique thoughts, feelings, and desires. And like plants, we need to be nurtured and cared for in order to grow and thrive. But unlike plants, we have the ability to choose our own path. We can choose to reach towards one another, or we can drift off on our own, following the whims of our own desires.
 
-When I was a kid I thought Frank Lloyd Wright was a just a funny Simon and Garfunkel song. When I got older I saw a lot of *entertainers* taking up architecture and had a sort of psychedelic revelation, seeing the world in a new way. I was fascinated by the idea of designing a building, and I wanted to be an architect. What I didn't realize is that architecture is rarely something that someone falls into. It's a career that requires a lot of schooling, and a lot of money. I didn't have either of those things, and I didn't have the patience to wait for them. So I went into computer science instead, and I've been designing software ever since.
+And yet, despite all of this individualism, I can't help but feel like we are all connected in some way. It's like we are all just different parts of the same whole, each one contributing to the greater consciousness that surrounds us. Maybe it's something like panpsychism, or perhaps it's something else entirely. I'm not sure.
 
-## The Architect
+All I know is that we are here to create, and while we may not be able to do it all on our own, we can at least do some of it together. Maybe we are all just architects of our own consciousness, building and shaping it one brick at a time. Or maybe we are all just vessels, filled with the same stream of consciousness and given the choice to grow or drift as we see fit.
 
-It seems we're here to create. And while we may not be able to do it all ourselves, we can at least do some of it together. Perhaps we are the architect together, this consciousness that seems to overlap might be unified soil and herb separted into pots of being, having the choice to grow towards one another or drift to our own desires.
-
-I've never been able to articulate exactly how I feel about this, and I think it would most closely relate to ***[Panpsychism](https://en.wikipedia.org/wiki/Panpsychism)***, even though I have my differences of opinion with that theology. Nonetheless, the stream of consciousness is a compelling thought, and I used to try to think about each person being a cup that's been filled from that stream. But water doesn't grow of course. A potted plant suits the analogy far better, with it's multiple parts and care required to ensure it lives and flourishes. Plus water doesn't die when it gets lonely.
+Either way, it's a strange and beautiful journey that we are all on, and I can't wait to see where it takes us next.

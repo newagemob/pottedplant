@@ -2,22 +2,22 @@
 
 import { NextPage } from 'next'
 import React, { useState } from 'react'
-import { Projects, GitHub, Resume, Contact } from '../components'
+import { Projects, GitHub, Contact } from '../components'
 
 
 const Development: NextPage = () => {
-  const tabs = ['Projects', 'GitHub', 'Resume', 'Contact']
+  const tabs = ['Projects', 'GitHub', 'Contact']
   const [tab, setTab] = useState('projects')
 
   const renderTab = () => {
     switch (tab) {
-      case 'projects':
+      case 'Projects':
         return <Projects />
-      case 'github':
+      case 'GitHub':
         return <GitHub />
-      case 'resume':
-        return <Resume />
-      case 'contact':
+      // case 'resume':
+      //   return <Resume />
+      case 'Contact':
         return <Contact />
       default:
         return <Projects />
@@ -26,15 +26,15 @@ const Development: NextPage = () => {
 
   // if tab is selected, add underline to text
   const handleTabChange = (tab: string) => {
-    // once tab is selected, scroll to the next section
+    // once tab is selected, scroll to section with className 'dev-container'
     if (typeof window !== 'undefined') {
       window.scrollTo({
         top: window.innerHeight,
-        behavior: 'smooth',
+        behavior: 'smooth'
       })
     }
 
-    setTab(tab.toLowerCase())
+    setTab(tab)
   }
 
   return (

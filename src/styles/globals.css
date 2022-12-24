@@ -30,6 +30,9 @@ section {
   --dark-accent-main: #163832;
   --dark-accent-secondary: #277193;
   --dark-accent-tertiary: #FFD700;
+
+  --dark-text: #363636;
+  --light-text: #cbcbcb;
 }
 
 /* PAGES */

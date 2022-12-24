@@ -8,7 +8,6 @@
   text-align: center;
   margin: 1rem 3rem;
   padding: 1rem 0;
-
   height: 100vh;
 }
 
@@ -26,13 +25,26 @@
 .dev-navbar {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: left;
   margin: 1rem 3rem;
   padding: 1rem;
   border-bottom: 0.1rem solid #d1d1d1;
   border-top: 0.1rem solid #d1d1d1;
+}
+
+.dev-navbar button {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: var(--accent-secondary);
+  cursor: pointer;
+}
+.dev-navbar button:hover {
+  color: var(--accent-main);
+  font-size: 1.66rem;
 }
 
 
