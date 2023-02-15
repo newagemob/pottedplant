@@ -18,3 +18,9 @@ const useCopy = () => {
 }
 
 export default useCopy
+
+/* include this to your component to display the copied message
+
+{copyMessage ? <div id='copy-message'>📋 Copied &nbsp; <p id='copy-message-highlight'>{copyMessage}</p> &nbsp; to clipboard!</div> : null}
+
+*/

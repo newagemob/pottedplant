@@ -1,12 +1,14 @@
 // This is your Prisma schema file,
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
+// POSTGRESQL START COMMAND: psql -U postgres -h localhost -p 5432 -d pottedplant -- this starts postgresql on port 5432 with the default user postgres and database pottedplant
+
 generator client {
   provider = "prisma-client-js"
 }
 
 datasource db {
-  provider = "sqlite"
+  provider = "postgresql"
   // NOTE: When using postgresql, mysql or sqlserver, uncomment the @db.Text annotations in model Account below
   // Further reading:
   // https://next-auth.js.org/adapters/prisma#create-the-prisma-schema
@@ -57,6 +59,7 @@ model User {
   sessions      Session[]
   ownedItems    OwnedItem[]
   subscriptions Subscription[]
+  media         Media[]
 }
 
 model VerificationToken {
@@ -70,11 +73,18 @@ model VerificationToken {
 
 // Custom types
 
+// Media Types
+// 1. Book
+// 2. Video
+// 3. Sticker (PNG/SVG)
+// 4. Pack (Collection of Stickers or Videos)
+// 5. Other
 model OwnedItem {
   id        String   @id @default(cuid())
   createdAt DateTime @default(now())
   updatedAt DateTime @updatedAt
   name      String
+  mediaType String
   owner     User     @relation(fields: [ownerId], references: [id])
   ownerId   String
 }
@@ -87,3 +97,21 @@ model Subscription {
   owner     User     @relation(fields: [ownerId], references: [id])
   ownerId   String
 }
+
+model Media {
+  id        String   @id @default(cuid())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  name      String
+  mediaType String
+  owner     User     @relation(fields: [ownerId], references: [id])
+  ownerId   String
+}
+
+// example of PostgresSQL database for Prisma
+// create db
+// CREATE DATABASE pottedplant;
+// create tables
+// CREATE TABLE users (id SERIAL PRIMARY KEY, name VARCHAR(255), email VARCHAR(255), emailVerified TIMESTAMP, image VARCHAR(255), "createdAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP, "updatedAt" TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP);
+// CREATE TABLE items (id SERIAL PRIMARY KEY, name VARCHAR(255), description VARCHAR(255), price INTEGER, "userId" INTEGER REFERENCES users(id));
+// insert data

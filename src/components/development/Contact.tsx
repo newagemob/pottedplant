@@ -12,7 +12,7 @@ const Contact = () => {
     },
     {
       platform: 'Discord',
-      url: 'https://discord.gg/cDRxR86Q',
+      url: 'https://discord.gg/vqxz2a8nGc',
       icon: <FaDiscord />
     },
     {
@@ -21,6 +21,8 @@ const Contact = () => {
       icon: <FaInstagram />
     }
   ]
+
+  const { copyMessage, handleCopy } = useCopy()
 
   return (
     <>
@@ -39,18 +41,20 @@ const Contact = () => {
             {info.address && (
               <>
                 <div className='contact-link'>
-                  <button className='contact-address'>
+                  <button className='contact-address' onClick={() => handleCopy(info.address[0])}>
                     {info.address[0]}
                   </button>
                 </div>
+
+                {copyMessage ? <div id='copy-message'>📋 Copied &nbsp; <p id='copy-message-highlight'>{copyMessage}</p> &nbsp; to clipboard!</div> : null}
               </>
             )}
             {info.url && (
               <>
                 <div className='contact-link'>
-                  <button className='contact-address'>
+                  <a className='contact-address' href={info.url} target='_blank' rel='noreferrer'>
                     {info.url}
-                  </button>
+                  </a>
                 </div>
 
               </>

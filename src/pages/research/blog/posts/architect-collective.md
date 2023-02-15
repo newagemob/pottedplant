@@ -20,4 +20,4 @@ And yet, despite all of this individualism, I can't help but feel like we are al
 
 All I know is that we are here to create, and while we may not be able to do it all on our own, we can at least do some of it together. Maybe we are all just architects of our own consciousness, building and shaping it one brick at a time. Or maybe we are all just vessels, filled with the same stream of consciousness and given the choice to grow or drift as we see fit.
 
-Either way, it's a strange and beautiful journey that we are all on, and I can't wait to see where it takes us next.
+Either way, it's a strange and beautiful journey that we are all on. Fuck it, let's keep riding.

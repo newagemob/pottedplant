@@ -3,7 +3,7 @@ title: "Home Server"
 author: "I.M. Wright"
 category: "Programming"
 date: "2022-01-29"
-bannerImage: "https://media.architecturaldigest.com/photos/5a8217e3361bde6c53d18e17/master/w_1600%2Cc_limit/GettyImages-688030662.jpg"
+bannerImage: "https://e1.pxfuel.com/desktop-wallpaper/754/579/desktop-wallpaper-best-5-windows-home-server-on-hip-servers.jpg"
 tags:
     - infrastructure
     -
