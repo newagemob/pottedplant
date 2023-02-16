@@ -86,6 +86,7 @@ const Navbar = () => {
                 onClick={() => setNavModal(false)}
                 className='rounded-sm bg-slate-900 text-white p-2 z-60'
               >
+                {/* TODO: FIGURE OUT WHY THIS ICON ISN'T SHOWING UP */}
                 <MdClose />
               </button>
             </div>
@@ -106,7 +107,7 @@ const Navbar = () => {
     return (
       <>
         {/* mobile nav should be hamburger icon that expands to a modal when clicked. The modal should have the same content as the navbar, and when a link is clicked, or the user clicks outside of the modal, the modal should close. */}
-        <header className='fixed top-0 right-0 w-full h-full z-40 inset-0 overflow-hidden'>
+        <header className='fixed top-0 left-0 w-full h-full z-50 inset-0 overflow-hidden'>
           <div className='flex flex-row justify-end p-2'>
             <button
               onClick={() => setNavModal(true)}
