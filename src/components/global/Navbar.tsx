@@ -27,17 +27,23 @@ const Navbar = () => {
   const [navModal, setNavModal] = useState(false)
 
   useEffect(() => {
-    if (window.innerWidth < 768) {
-      setIsMobile(true)
-    }
-    // watch for changes in the window size
-    window.addEventListener('resize', () => {
+    if (typeof window !== 'undefined') {
       if (window.innerWidth < 768) {
         setIsMobile(true)
-      } else {
-        setIsMobile(false)
       }
-    })
+      // watch for changes in the window size
+      window.addEventListener('resize', () => {
+        if (window.innerWidth < 768) {
+          setIsMobile(true)
+        } else {
+          setIsMobile(false)
+        }
+      })
+
+      return () => {
+        window.removeEventListener('resize', () => { })
+      }
+    }
   }, [])
 
   const handlePageNavigation = (tab: string) => {
@@ -53,6 +59,22 @@ const Navbar = () => {
       router.push(url as string)
     }
   }
+
+  // handle escape key press
+  const handleEscape = (e: KeyboardEvent) => {
+    if (e.key === 'Escape') {
+      setNavModal(false)
+    }
+  }
+
+  // handle escape key press
+  useEffect(() => {
+    if (navModal) {
+      document.addEventListener('keydown', handleEscape)
+    } else {
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [navModal])
 
   const NavObjects = () => {
     return (
@@ -81,16 +103,6 @@ const Navbar = () => {
       <>
         {navModal && (
           <div className='fixed top-0 right-0 w-full h-full z-50 inset-0 overflow-hidden'>
-            <div className='flex flex-row justify-end p-2'>
-              <button
-                onClick={() => setNavModal(false)}
-                className='rounded-sm bg-slate-900 text-white p-2 z-60'
-              >
-                {/* TODO: FIGURE OUT WHY THIS ICON ISN'T SHOWING UP */}
-                <MdClose />
-              </button>
-            </div>
-
             {/* put modal in center of screen with inset-0 and a backdrop filter */}
             <div className='fixed inset-0 overflow-hidden flex justify-center items-center backdrop-filter backdrop-blur-sm'>
               <div className='grid grid-cols-1 gap-2 p-2 justify-around'>
@@ -107,12 +119,13 @@ const Navbar = () => {
     return (
       <>
         {/* mobile nav should be hamburger icon that expands to a modal when clicked. The modal should have the same content as the navbar, and when a link is clicked, or the user clicks outside of the modal, the modal should close. */}
-        <header className='fixed top-0 left-0 w-full h-full z-50 inset-0 overflow-hidden'>
+        <header className='absolute w-full h-100 px-4 py-0'>
           <div className='flex flex-row justify-end p-2'>
             <button
-              onClick={() => setNavModal(true)}
-              className='rounded-sm bg-slate-900 text-white p-2'>
-              <MdOutlineMenuOpen />
+              onClick={() => setNavModal(!navModal)}
+              className='rounded-sm bg-slate-900 text-white p-2 hover:bg-slate-800 hover:scale-105 transition'
+            >
+              {navModal ? <MdClose /> : <MdOutlineMenuOpen />}
             </button>
           </div>
 

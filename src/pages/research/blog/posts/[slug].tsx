@@ -26,10 +26,12 @@ const BlogPost = (props: {
                 <h1 className='text-4xl font-bold'>{props.frontMatter.title}</h1>
                 <p className='text-sm italic'>{props.frontMatter.date}</p>
 
-                <ReactMarkdown
-                    children={props.content}
-                    className='break-words'
-                />
+                <div className='text-left my-4 break-all'>
+                    <ReactMarkdown
+                        children={props.content}
+                        className='prose prose-sm sm:prose lg:prose-lg xl:prose-2xl break-keep'
+                    />
+                </div>
             </div>
         </div>
     </div>

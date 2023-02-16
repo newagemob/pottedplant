@@ -3,6 +3,7 @@
 import { NextPage } from 'next'
 import React, { useState } from 'react'
 import { Projects, GitHub, Contact } from '../../components'
+import TerminalCommands from '../../components/terminal/TerminalCommands'
 
 
 const Development: NextPage = () => {
@@ -37,31 +38,17 @@ const Development: NextPage = () => {
     setTab(tab)
   }
 
+  const DesktopView = () => {
+    return (
+      <>
+        <TerminalCommands />
+      </>
+    )
+  }
+
   return (
     <>
-      <div className='bg-gradient-to-r from-zinc-100 to-zinc-200 min-w-[100vw] min-h-[100vh]'>
-        <section className='page-title-container'>
-          <h1 className='page-title'>
-            Development Portfolio
-          </h1>
-
-          <div className='dev-navbar'>
-            {tabs.map((tab) => (
-              <button
-                key={tab}
-                className='dev-tab'
-                onClick={() => handleTabChange(tab)}
-              >
-                {tab}
-              </button>
-            ))}
-          </div>
-        </section>
-
-        <section className='dev-container'>
-          {renderTab()}
-        </section>
-      </div>
+      <DesktopView />
     </>
   )
 }

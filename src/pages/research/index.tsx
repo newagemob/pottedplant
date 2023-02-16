@@ -50,9 +50,9 @@ const Research: NextPage = () => {
 
   return (
     <>
-      <main className='flex flex-col justify-center items-center min-w-[100vw] min-h-[100vh] bg-transparent'>
+      <main className='flex flex-col justify-center items-center min-w-[100vw] min-h-[100vh] bg-transparent px-4 overflow-hidden'>
         {/* path for svg background, animated with kute.js */}
-        <animated.div className='absolute top-0 left-0 z-[-1] bg-rose-800'>
+        <animated.div className='absolute top-0 left-0 z-[-1] bg-rose-700 min-w-100vw min-h-100vh'>
           <animated.svg
             id="visual"
             viewBox="0 0 900 600"
@@ -63,24 +63,24 @@ const Research: NextPage = () => {
             preserveAspectRatio="none"
           >
             <animated.g transform="translate(900, 0)">
-              <animated.path id="bg-blob-01" d={rightBlobProps.d} fill="#065f46"></animated.path>
+              <animated.path id="bg-blob-01" d={rightBlobProps.d} fill="#1d4ed8"></animated.path>
             </animated.g>
             <animated.g transform="translate(0, 600)">
-              <animated.path id="bg-blob-03" d={leftBlobProps.d} fill="#065f46"></animated.path>
+              <animated.path id="bg-blob-03" d={leftBlobProps.d} fill="#134e4a"></animated.path>
             </animated.g>
 
             <animated.g transform="translate(900, 0)">
-              <animated.path id="bg-blob-02" d={rightBlobProps.d} fill="#065f46"></animated.path>
+              <animated.path id="bg-blob-02" d={rightBlobProps.d} fill="#1d4ed8"></animated.path>
             </animated.g>
             <animated.g transform="translate(0, 600)">
-              <animated.path id="bg-blob-04" d={leftBlobProps.d} fill="#065f46"></animated.path>
+              <animated.path id="bg-blob-04" d={leftBlobProps.d} fill="#134e4a"></animated.path>
             </animated.g>
           </animated.svg>
         </animated.div>
 
-        <div className='flex flex-col justify-center items-center bg-transparent'>
+        <div className='flex flex-col justify-center items-center'>
           <button
-            className='flex flex-col md:flex-row justify-between items-center rounded-sm bg-gray-100 p-4 mx-4 my-4 w-full md:w-3/4 px-4 max-w-2xl hover:bg-gradient-to-l hover:from-teal-900 hover:to-emerald-900 hover:via-emerald-800 transition transition-colors md:py-4 text-zinc-700 hover:text-zinc-100 hover:scale-105'
+            className='flex flex-col md:flex-row justify-between items-center rounded-sm bg-gray-100 p-4 mx-4 my-4 w-full max-w-2xl bg-gradient-to-r from-slate-200 to-slate-300 hover:bg-gradient-to-l hover:from-teal-900 hover:to-emerald-900 hover:via-emerald-800 transition transition-colors md:py-4 text-zinc-700 hover:text-zinc-100 hover:scale-105'
             onClick={() => { router.push('/research/blog') }}
           >
             <span className='text-decoration-none border-none rounded-md px-0 md:px-2 pb-6 md:py-0 w-full text-2xl text-left'>
@@ -98,7 +98,7 @@ const Research: NextPage = () => {
           </button>
 
           <button
-            className='flex flex-col md:flex-row justify-between items-center rounded-sm bg-gray-100 p-4 mx-4 my-4 w-full md:w-3/4 px-4 max-w-2xl hover:bg-gradient-to-l hover:from-rose-900 hover:to-red-900 hover:via-rose-800 transition transition-colors md:py-4 text-zinc-700 hover:text-zinc-100 hover:scale-105'
+            className='flex flex-col md:flex-row justify-between items-center rounded-sm bg-gray-100 p-4 mx-4 my-4 w-full px-4 max-w-2xl bg-gradient-to-r from-slate-200 to-slate-300 hover:bg-gradient-to-l hover:from-rose-900 hover:to-red-900 hover:via-rose-800 transition transition-colors md:py-4 text-zinc-700 hover:text-zinc-100 hover:scale-105'
             onClick={() => { router.push('/research/courses') }}
           >
             <span className='text-decoration-none border-none rounded-md px-0 md:px-2 pb-6 md:py-0 w-full text-2xl text-left'>

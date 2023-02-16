@@ -20,7 +20,7 @@ const Courses = (props: {
               className='flex flex-col justify-around items-center my-4 mx-4 p-4 rounded-md bg-zinc-200'
               key={slug}
             >
-              <Link href={`/research/blog/posts/${slug}`} passHref id='blog-link'>
+              <Link href={`/research/courses/posts/${slug}`} passHref id='blog-link'>
                 <img
                   src={bannerImage}
                   alt={title}
