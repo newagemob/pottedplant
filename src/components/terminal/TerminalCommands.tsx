@@ -78,6 +78,22 @@ const TerminalCommands = () => {
 
   const [commandHistory, setCommandHistory] = useState<string[]>([currentCommandOutput])
 
+  // listen for ctrl + l to clear the terminal
+  useEffect(() => {
+    const handleClear = (e: KeyboardEvent) => {
+      if (e.ctrlKey && e.key === 'l') {
+        setCurrentCommandOutput([])
+        setCommandHistory([])
+      }
+    }
+
+    window.addEventListener('keydown', handleClear)
+
+    return () => {
+      window.removeEventListener('keydown', handleClear)
+    }
+  }, [])
+
   const handleCommand = (command: string) => {
     switch (command) {
       case 'help':
@@ -161,7 +177,8 @@ const TerminalCommands = () => {
         )
       case 'clear':
         setCommandHistory([]) // TODO: figure out why this doesn't work
-        return ''
+        setCurrentCommandOutput([])
+        break
       case 'isaiah@pottedplant.dev':
         // open email client in new tab
         setTimeout(() => {
