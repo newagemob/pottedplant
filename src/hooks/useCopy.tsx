@@ -14,7 +14,7 @@ const useCopy = () => {
     }, 3000)
   }
 
-  return { copyMessage, handleCopy }
+  return { isCopied, copyMessage, handleCopy }
 }
 
 export default useCopy
