@@ -50,9 +50,9 @@ model Session {
 }
 
 model User {
-  id            String    @id @default(cuid())
+  id            String         @id @default(cuid())
   name          String?
-  email         String?   @unique
+  email         String?        @unique
   emailVerified DateTime?
   image         String?
   accounts      Account[]
@@ -69,7 +69,6 @@ model VerificationToken {
 
   @@unique([identifier, token])
 }
-
 
 // Custom types
 
@@ -99,13 +98,16 @@ model Subscription {
 }
 
 model Media {
-  id        String   @id @default(cuid())
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  name      String
-  mediaType String
-  owner     User     @relation(fields: [ownerId], references: [id])
-  ownerId   String
+  id          String   @id @default(cuid())
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+  name        String
+  description String
+  image       String?
+  owner       User     @relation(fields: [ownerId], references: [id])
+  ownerId     String
+  mediaType   String
+  price       Int // in cents
 }
 
 // example of PostgresSQL database for Prisma
