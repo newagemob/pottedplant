@@ -150,10 +150,10 @@ export default Create
 const getServerSideProps: GetServerSideProps = async (ctx) => {
   const session = await getSession(ctx)
 
-  if (!session) {
+  if (!session?.user?.id) {
     return {
       redirect: {
-        destination: '/auth/signin',
+        destination: '/api/auth/signin',
         permanent: false
       }
     }
