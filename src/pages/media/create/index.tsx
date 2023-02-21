@@ -59,21 +59,38 @@ const Create: NextPage = () => {
     // User should be able to post a new media item here. Allow them to select a type (sticker, gif) from a dropdown, and then allow them to upload an image. The image should be converted to a base64 string and sent to the server. The server should then save the image to the database and return the media item page to the client. The client should then redirect to the media item page.
     // if mediaType === 'sticker' then render a file input accepting only .png and .svg files, gif input accepting only .gif files
     <>
-      <h1 className='text-4xl text-black'>
-        Create Media
-      </h1>
+      <div className='flex flex-row items-center justify-start w-full h-full p-4 md:mt-20'>
+        <h1 className='text-4xl text-zinc-500'>
+          Create Media
+        </h1>
+      </div>
 
       <div className='flex flex-wrap justify-center w-full mt-4'>
         <div
-          className='flex flex-col items-center justify-center min-w-[100vw] min-h-[100vh] p-4 space-y-4 border border-gray-300 rounded-md md:w-1/3 lg:w-1/4'
+          className='flex flex-col items-center justify-center min-w-[100vw] min-h-[100vh] p-4 space-y-4'
         >
-          <select
-            className='border border-gray-300 rounded-md'
-            onChange={(e) => handleMediaTypeChange(e.target.value.toLowerCase())}
-          >
-            <option value='sticker'>Sticker</option>
-            <option value='gif'>Gif</option>
-          </select>
+          <div className='flex flex-row items-center justify-center w-full space-x-4'>
+            <select
+              className='border border-gray-300 rounded-md'
+              onChange={(e) => handleMediaTypeChange(e.target.value.toLowerCase())}
+            >
+              <option value='sticker'>Sticker</option>
+              <option value='gif'>Gif</option>
+            </select>
+
+            <label htmlFor='file' className='border border-gray-300 rounded-md cursor-pointer px-4 hover:bg-indigo-200 hover:text-zinc-600'>
+              <input
+                type='file'
+                accept={mediaType === 'sticker' ? '.png, .svg' : '.gif'}
+                id='file'
+                className='hidden'
+                onChange={(e) => {
+                  setImage(e.target.files ? e.target.files[0] : '')
+                }}
+              />
+              upload <span className='text-rose-500'>{mediaType}</span>
+            </label>
+          </div>
 
           {/* file input ? file input : image */}
           {image ? (
@@ -82,19 +99,6 @@ const Create: NextPage = () => {
           ) : (
             <div className='w-32 h-32 border border-gray-300 rounded-md' />
           )}
-          {/* file input should be wrapped in a label so I can style it */}
-          <label htmlFor='file' className='border border-gray-300 rounded-md'>
-            <input
-              type='file'
-              accept={mediaType === 'sticker' ? '.png, .svg' : '.gif'}
-              id='file'
-              className='hidden'
-              onChange={(e) => {
-                setImage(e.target.files ? e.target.files[0] : '')
-              }}
-            />
-            Upload
-          </label>
 
           <div className='flex flex-col items-center justify-center w-full space-y-4'>
             <input

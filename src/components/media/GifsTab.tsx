@@ -15,10 +15,6 @@ const GifsTab = () => {
   return (
     <>
       <div className='flex flex-col items-center justify-center w-full h-full p-4'>
-        <h1 className='text-4xl text-black'>
-          gifs
-        </h1>
-
         <div className='grid grid-cols-2 gap-4 mt-4 md:grid-cols-3'>
           {gifs?.map((media, index: any) => (
             <Link href={`/media/item/${media.id}`} key={media.id}>
