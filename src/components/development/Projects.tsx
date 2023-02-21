@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React from 'react'
 
 const Projects = () => {
@@ -24,14 +25,14 @@ const Projects = () => {
       <section className='dev-card' id='projects'>
         {projects.map((project) => (
           <div key={project.name} id='project'>
-            <a
+            <Link
               className='project-name'
               href={project.link}
               target='_blank'
               rel='noreferrer'
             >
               {project.name}
-            </a>
+            </Link>
             <p className='project-description'>{project.description}</p>
           </div>
         ))}

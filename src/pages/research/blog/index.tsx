@@ -2,6 +2,7 @@ import Link from 'next/link'
 import matter from 'gray-matter'
 import fs from "fs"
 import path from "path"
+import Image from 'next/image'
 
 const Blog = (props: {
   posts: [{
@@ -21,9 +22,9 @@ const Blog = (props: {
               key={slug}
             >
               <Link href={`/research/blog/posts/${slug}`} passHref id='blog-link'>
-                <img
-                  src={bannerImage}
-                  alt={title}
+                <Image
+                  src={bannerImage as string}
+                  alt={title as string}
                   id='blog-thumbnail-image'
                   className='rounded-md h-64 w-64 object-cover'
                 />

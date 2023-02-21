@@ -2,6 +2,7 @@ import { NextPage, GetServerSideProps } from 'next'
 import React, { useEffect, useState } from 'react'
 import { trpc } from '../../../utils/trpc'
 import { getSession, signIn } from 'next-auth/react'
+import Image from 'next/image'
 
 const Create: NextPage = () => {
   const [mediaType, setMediaType] = useState('sticker')
@@ -95,7 +96,7 @@ const Create: NextPage = () => {
           {/* file input ? file input : image */}
           {image ? (
             // display image from File Type
-            <img src={URL.createObjectURL(image)} className='object-cover w-32 h-32 border border-gray-300 rounded-md' />
+            <Image src={URL.createObjectURL(image)} alt={name} className='object-cover w-32 h-32 border border-gray-300 rounded-md' />
           ) : (
             <div className='w-32 h-32 border border-gray-300 rounded-md' />
           )}

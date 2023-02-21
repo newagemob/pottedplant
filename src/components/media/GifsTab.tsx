@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
 import { trpc } from '../../utils/trpc'
@@ -22,7 +23,7 @@ const GifsTab = () => {
                 key={media.id}
                 className='flex flex-col items-center justify-center min-w-[100%] min-h-[100%] p-4 space-y-4 border border-gray-300 rounded-md'
               >
-                <img
+                <Image
                   className='object-cover w-full h-full rounded-md'
                   src={gifImageSources[index]}
                   alt={media.name}

@@ -2,6 +2,7 @@ import Link from 'next/link'
 import React, { useEffect } from 'react'
 import { trpc } from '../../utils/trpc'
 import Base64ToMedia from '../../helpers/base64/Base64ToMedia'
+import Image from 'next/image'
 
 const StickersTab = () => {
   const { data: stickers } = trpc.media.getAllStickers.useQuery()
@@ -23,7 +24,7 @@ const StickersTab = () => {
                 key={media.id}
                 className='flex flex-col items-center justify-around min-w-[100%] min-h-[100%] p-4 space-y-4 border border-gray-300 rounded-md'
               >
-                <img
+                <Image
                   className='object-cover w-full h-full rounded-md justify-items-start'
                   src={stickerImageSources[index]}
                   alt={media.name}

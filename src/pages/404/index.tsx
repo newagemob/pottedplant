@@ -1,4 +1,5 @@
 import { NextPage } from 'next'
+import Link from 'next/link'
 import React from 'react'
 
 const ErrorPage: NextPage = () => {
@@ -31,13 +32,13 @@ const ErrorPage: NextPage = () => {
 
         {/* home button */}
         <div className='absolute bottom-40 left-0 w-full h-20 flex flex-row items-center justify-center'>
-          <a
+          <Link
           // go to previous page
             href='/'
             className='flex flex-row items-center justify-center gap-2 px-10 py-2 rounded-md bg-indigo-700 backdrop-filter backdrop-blur-lg shadow-2xl hover:bg-emerald-700/70'
           >
             <p className='md:text-2xl font-semibold text-zinc-300'>🏃‍♂️ get me outta here</p>
-          </a>
+          </Link>
         </div>
       </div>
     </>

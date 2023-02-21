@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Loading } from '../'
 import { useCopy } from '../../hooks'
 import { FaDiscord, FaInstagram, FaEnvelope } from 'react-icons/fa'
+import Link from 'next/link'
 
 const Contact = () => {
   const contactInfo = [
@@ -52,9 +53,9 @@ const Contact = () => {
             {info.url && (
               <>
                 <div className='contact-link'>
-                  <a className='contact-address' href={info.url} target='_blank' rel='noreferrer'>
+                  <Link className='contact-address' href={info.url} target='_blank' rel='noreferrer'>
                     {info.url}
-                  </a>
+                  </Link>
                 </div>
 
               </>

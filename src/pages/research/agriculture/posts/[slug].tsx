@@ -5,6 +5,8 @@ import matter, { } from 'gray-matter'
 // import { marked } from 'marked'
 import ReactMarkdown from 'react-markdown'
 import ReactDom from 'react-dom'
+import Link from 'next/link'
+import Image from 'next/image'
 
 const BlogPost = (props: {
     frontMatter: { [key: string]: string },
@@ -14,11 +16,11 @@ const BlogPost = (props: {
     <div className='flex justify-center items-center bg-gray-100' id='blog-post'>
 
         <div className='flex flex-col justify-center max-w-2xl mx-auto' id='blog-post-content'>
-            <img src={props.frontMatter.bannerImage} alt={props.frontMatter.title} />
+            <Image src={props.frontMatter.bannerImage as string} alt={props.frontMatter.title as string} />
 
             {/* back to /research/blog button */}
             <button id='blog-back-button'>
-                <a href='/research/mycology'>back</a>
+                <Link href='/research/mycology'>back</Link>
             </button>
 
             <h1 className='text-4xl font-bold'>{props.frontMatter.title}</h1>

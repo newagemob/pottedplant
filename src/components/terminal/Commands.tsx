@@ -1,3 +1,4 @@
+import Link from 'next/link'
 import React, { useState } from 'react'
 import { useCopy } from '../../hooks'
 
@@ -108,9 +109,9 @@ const Commands = () => {
               {/* loop through projects and display them */}
               {projects.map((project: any, index: any) => (
                 <span key={index} id='command' className='grid grid-cols-2 gap-x-2 gap-y-4'>
-                  <a className='text-violet-200 hover:text-emerald-300 font-bold py-2' href={project.url} target='_blank' rel='noreferrer'>
+                  <Link className='text-violet-200 hover:text-emerald-300 font-bold py-2' href={project.url} target='_blank' rel='noreferrer'>
                     {project.name}
-                  </a>
+                  </Link>
                   <p className='text-orange-200 flex flex-row justify-start border-b border-zinc-200 py-2'>
                     {project.description}
                   </p>
