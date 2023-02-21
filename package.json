@@ -5,6 +5,7 @@
   "scripts": {
     "build": "next build",
     "build:prisma": "prisma generate",
+    "build:data": "prisma db push --preview-feature",
     "build:migrate": "prisma migrate deploy",
     "dev": "next dev",
     "postinstall": "prisma generate",
