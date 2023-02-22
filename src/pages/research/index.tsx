@@ -97,6 +97,7 @@ const Research: NextPage = () => {
             </span>
           </button>
 
+          {/* TODO: Fix weird overflow-y issue on mobile for bottom button */}
           <button
             className='flex flex-col md:flex-row justify-between items-center rounded-sm bg-gray-100 p-4 mx-4 my-4 w-full px-4 max-w-2xl bg-gradient-to-r from-slate-200 to-slate-300 hover:bg-gradient-to-l hover:from-rose-900 hover:to-red-900 hover:via-rose-800 transition transition-colors md:py-4 text-zinc-700 hover:text-zinc-100 hover:scale-105'
             onClick={() => { router.push('/research/courses') }}
