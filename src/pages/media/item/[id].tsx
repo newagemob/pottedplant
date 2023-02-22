@@ -39,6 +39,8 @@ const MediaItem: NextPage = () => {
             className='object-cover w-100 h-100 rounded-md'
             src={mediaData?.image ? mediaData?.image : 'https://i.ytimg.com/vi/m-IPERwZyCs/maxresdefault.jpg'}
             alt={mediaData?.name as string}
+            width={200}
+            height={200}
           />
           <div className='flex flex-row items-center justify-start w-full md:w-1/2 lg:w-1/3 border-t-2 border-slate-700'>
             <p className='text-sm text-gray-500 text-left pt-1'>

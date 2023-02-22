@@ -30,6 +30,8 @@ const MediaTab = ({ tab }: { tab: MediaTabProps }) => {
                 className='object-cover w-full h-64 rounded-md'
                 src={media.image}
                 alt={media.name}
+                width={200}
+                height={200}
               />
               <div className='flex flex-col items-center justify-center w-full'>
                 <h2 className='text-xl font-medium text-gray-900'>

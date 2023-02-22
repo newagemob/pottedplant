@@ -16,7 +16,12 @@ const BlogPost = (props: {
     <div className='flex justify-center items-center bg-gray-100' id='blog-post'>
 
         <div className='flex flex-col justify-center max-w-2xl mx-auto' id='blog-post-content'>
-            <Image src={props.frontMatter.bannerImage as string} alt={props.frontMatter.title as string} />
+            <Image
+                src={props.frontMatter.bannerImage as string}
+                alt={props.frontMatter.title as string}
+                width={200}
+                height={200}
+            />
 
             {/* back to /research/blog button */}
             <button id='blog-back-button'>

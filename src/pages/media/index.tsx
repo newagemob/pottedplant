@@ -1,11 +1,15 @@
 // Media Landing: this will be the only place where purchases can be made. We will start by implenting the ability to purchase a single image (PNG or SVG sticker) or video (GIF or MP4). Later we will add the ability to purchase a collection of images or videos. 
 
 import { NextPage } from 'next'
+import { useSession } from 'next-auth/react'
+import Link from 'next/link'
 import React, { useState } from 'react'
 import GifsTab from '../../components/media/GifsTab'
 import StickersTab from '../../components/media/StickersTab'
 
 const Media: NextPage = () => {
+  const { data: session } = useSession()
+
   const tabs = ['Stickers', 'GIFs']
   const [activeTab, setActiveTab] = useState('stickers')
 
@@ -41,6 +45,18 @@ const Media: NextPage = () => {
                 {tab}
               </button>
             ))}
+
+            {session?.user?.id ? (
+              <Link href='/media/create'>
+                <button
+                  className='px-4 py-2 w-full text-sm font-medium text-zinc-800 bg-zinc-300 border border-transparent rounded-md hover:bg-slate-500 hover:text-zinc-200 focus:outline-none focus:ring-0 ring-offset-2 ring-zinc-500 ring-offset-emerald-100'
+                >
+                  Create
+                </button>
+              </Link>
+            ) : (
+              <></>
+            )}
           </div>
         </div>
 

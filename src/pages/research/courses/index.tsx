@@ -27,6 +27,8 @@ const Courses = (props: {
                   alt={title as string}
                   id='blog-thumbnail-image'
                   className='rounded-md h-64 w-64 object-cover'
+                  width={200}
+                  height={200}
                 />
                 <h5
                   id='blog-thumbnail-title'

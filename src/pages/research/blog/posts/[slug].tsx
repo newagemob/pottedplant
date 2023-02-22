@@ -17,7 +17,12 @@ const BlogPost = (props: {
         <div className='flex justify-center items-center bg-gray-100 p-4 rounded-md shadow-md break-all'>
 
             <div className='flex flex-col justify-center max-w-2xl mx-auto'>
-                <Image src={props.frontMatter.bannerImage as string} alt={props.frontMatter.title as string} />
+                <Image
+                    src={props.frontMatter.bannerImage as string}
+                    alt={props.frontMatter.title as string}
+                    width={200}
+                    height={200}
+                />
 
                 <div className='text-left text-sm text-indigo-800 my-4'>
                     <Link href='/research/blog' className='text-decoration-none border-2 rounded-sm px-2 py-1 border-indigo-800 hover:bg-indigo-800 hover:text-zinc-200'>

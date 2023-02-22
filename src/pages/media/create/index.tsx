@@ -115,7 +115,13 @@ const Create: NextPage = () => {
           {/* file input ? file input : image */}
           {image ? (
             // display image from File Type
-            <Image src={URL.createObjectURL(image)} alt={name} className='object-cover w-32 h-32 border border-gray-300 rounded-md' />
+            <Image
+              src={URL.createObjectURL(image)}
+              alt={name}
+              className='object-cover w-32 h-32 border border-gray-300 rounded-md'
+              width={128}
+              height={128}
+            />
           ) : (
             <div className='w-32 h-32 border border-gray-300 rounded-md' />
           )}

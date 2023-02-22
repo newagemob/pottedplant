@@ -15,7 +15,13 @@ const AgricultureBlog = (props: {
     <div id='blog-landing'>
       {props.posts.map(({ slug, frontMatter: { title, bannerImage } }) => (
         <Link key={slug} href={`/research/agriculture/posts/${slug}`} passHref id='blog-link'>
-          <Image src={bannerImage as string} alt={title as string} id='blog-thumbnail-image' />
+          <Image
+            src={bannerImage as string}
+            alt={title as string}
+            id='blog-thumbnail-image'
+            width={200}
+            height={200}
+          />
           <h5 id='blog-thumbnail-title'>{title}</h5>
           <hr />
         </Link>
