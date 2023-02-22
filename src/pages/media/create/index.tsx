@@ -1,10 +1,12 @@
-import { NextPage, GetServerSideProps } from 'next'
+import { NextPage, GetServerSidePropsContext } from 'next'
 import React, { useEffect, useState } from 'react'
 import { trpc } from '../../../utils/trpc'
-import { getSession, signIn } from 'next-auth/react'
+import { useSession, signIn } from 'next-auth/react'
 import Image from 'next/image'
 
 const Create: NextPage = () => {
+  const { data: session } = useSession()
+
   const [mediaType, setMediaType] = useState('sticker')
   const handleMediaTypeChange = (type: string) => {
     setMediaType(type)
@@ -56,6 +58,23 @@ const Create: NextPage = () => {
     }
   }
 
+  if (!session?.user?.id) {
+    return (
+      <div className='flex flex-col items-center justify-center w-full h-screen space-y-4 p-4'>
+        <h1 className='text-4xl text-zinc-500 text-center'>
+          You must be signed in to create media
+        </h1>
+
+        <button
+          className='border border-gray-300 rounded-md px-4 py-2 hover:bg-indigo-200 hover:text-zinc-600'
+          onClick={() => signIn()}
+        >
+          Sign In
+        </button>
+      </div>
+    )
+  }
+
   return (
     // User should be able to post a new media item here. Allow them to select a type (sticker, gif) from a dropdown, and then allow them to upload an image. The image should be converted to a base64 string and sent to the server. The server should then save the image to the database and return the media item page to the client. The client should then redirect to the media item page.
     // if mediaType === 'sticker' then render a file input accepting only .png and .svg files, gif input accepting only .gif files
@@ -72,14 +91,14 @@ const Create: NextPage = () => {
         >
           <div className='flex flex-row items-center justify-center w-full space-x-4'>
             <select
-              className='border border-gray-300 rounded-md'
+              className='border border-gray-300 rounded-md px-4 py-1 hover:bg-indigo-200 hover:text-zinc-600 hover:cursor-pointer'
               onChange={(e) => handleMediaTypeChange(e.target.value.toLowerCase())}
             >
               <option value='sticker'>Sticker</option>
               <option value='gif'>Gif</option>
             </select>
 
-            <label htmlFor='file' className='border border-gray-300 rounded-md cursor-pointer px-4 hover:bg-indigo-200 hover:text-zinc-600'>
+            <label htmlFor='file' className='border border-gray-300 rounded-md cursor-pointer px-4 py-1 hover:bg-indigo-200 hover:text-zinc-600'>
               <input
                 type='file'
                 accept={mediaType === 'sticker' ? '.png, .svg' : '.gif'}
@@ -129,7 +148,7 @@ const Create: NextPage = () => {
               type='submit'
               value='Post'
               disabled={!image}
-              className={image ? 'border border-gray-300 rounded-md' : 'border border-gray-300 rounded-md opacity-50'}
+              className={image ? 'border border-gray-300 rounded-md px-4 py-2 hover:bg-indigo-200 hover:text-zinc-600' : 'border border-gray-300 rounded-md px-4 py-2 hover:bg-indigo-200 hover:text-zinc-600 cursor-not-allowed'}
               onClick={(e) => {
                 handleSubmit(e as any)
 
@@ -145,25 +164,3 @@ const Create: NextPage = () => {
 }
 
 export default Create
-
-// This is an Authorized Route
-const getServerSideProps: GetServerSideProps = async (ctx) => {
-  const session = await getSession(ctx)
-
-  if (!session?.user?.id) {
-    return {
-      redirect: {
-        destination: '/api/auth/signin',
-        permanent: false
-      }
-    }
-  }
-
-  return {
-    props: {
-      session
-    }
-  }
-}
-
-export { getServerSideProps }
