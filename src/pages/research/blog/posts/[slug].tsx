@@ -4,7 +4,6 @@ import path from 'path'
 import matter, { } from 'gray-matter'
 // import { marked } from 'marked'
 import ReactMarkdown from 'react-markdown'
-import ReactDom from 'react-dom'
 import Link from 'next/link'
 import Image from 'next/image'
 
