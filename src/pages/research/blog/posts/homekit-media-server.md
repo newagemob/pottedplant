@@ -39,8 +39,21 @@ git clone https://github.com/newagemob/homekit.git
 Now that you have the repository downloaded, go into the directory and run the install script.
 
 ```bash
-cd homekit/server && ./start_homekit.sh
+cd homekit/server && chmod +x start_homekit.sh && ./start_homekit.sh
 ```
+
+***If you're having issues with this part, you're probably on a Windows Machine. You can run the commands in the script manually.***
+
+```bash
+cd jellyfin && docker-compose up -d
+cd ../black-candy && docker-compose up -d
+cd ../sonarr && docker-compose up -d
+cd ../radarr && docker-compose up -d
+cd ../jackett && docker-compose up -d
+cd ../transmission && docker-compose up -d
+```
+
+***If you're still having issues, make sure that Docker is running and that Docker Compose is installed.***
 
 This should pull the repositories from Docker Hub and start the containers. You can check the status of the containers by running `docker ps`, but you should see `{DOCKER CONTAINER} ...done` for each of the containers. 
 
