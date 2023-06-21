@@ -3,7 +3,7 @@ title: "Formatting Linux Disks with Parted"
 author: "I.M. Wright"
 category: "programming"
 date: "2023-06-20"
-bannerImage: "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/W2I6OCDQIMI6VIKWABELMLG3KE.jpg&w=1484"
+bannerImage: "https://media.istockphoto.com/id/466312132/vector/computer-disk-icon.jpg?s=612x612&w=0&k=20&c=m-kxAA2_YWpQCW_dOe7JkAqjkJLtBwWfTNi9YANJAUw="
 tags:
     - programming
     - disk-partitioning

@@ -3,7 +3,7 @@ title: "Homekit Media Server"
 author: "I.M. Wright"
 category: "programming"
 date: "2023-06-20"
-bannerImage: "https://www.washingtonpost.com/wp-apps/imrs.php?src=https://arc-anglerfish-washpost-prod-washpost.s3.amazonaws.com/public/W2I6OCDQIMI6VIKWABELMLG3KE.jpg&w=1484"
+bannerImage: "https://static01.nyt.com/images/2018/05/15/arts/01hal-voice1/merlin_135847308_098289a6-90ee-461b-88e2-20920469f96a-superJumbo.jpg"
 tags:
     - programming
     - media-server
