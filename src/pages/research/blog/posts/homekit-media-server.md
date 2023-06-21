@@ -96,3 +96,24 @@ ifconfig
 ```bash
 ipconfig
 ```
+
+## Downloading New Media with Sonarr, Radarr, Jackett, and Transmission
+
+Sonarr, Radarr, Jackett, and Transmission are all configured to work together. You can access the web interfaces for each of these services by going to the following URLs:
+
+- Sonarr: `http://127.0.0.1:8989`
+- Radarr: `http://127.0.0.1:7878`
+- Jackett: `http://127.0.0.1:9117`
+- Transmission: `http://127.0.0.1:9091`
+
+The workflow goes like this:
+
+1. Configure Jackett proxy to work with your favorite torrent sites.
+2. Configure Sonarr and Radarr to work with Jackett.
+3. Configure Sonarr and Radarr to work with Transmission.
+4. Add a new show or movie to Sonarr or Radarr.
+5. Sonarr or Radarr will search for the show or movie on your favorite torrent sites.
+6. Sonarr or Radarr will send the torrent to Transmission.
+7. Transmission will download the torrent and send it to the `/media-server/movies` or `/media-server/tv` directories.
+8. Jellyfin will automatically detect the new media and add it to your library.
+9. Black Candy will need to be synced to detect the new media.
